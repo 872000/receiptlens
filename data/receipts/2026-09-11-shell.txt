@@ -1,0 +1,11 @@
+SHELL
+456 Upper James St, Hamilton ON
+
+09/11/2026 19:02   PUMP 04
+
+REGULAR GAS 42.310L      58.79
+CAR WASH BASIC            8.99
+
+SUBTOTAL                 67.78
+HST 13%                   8.81
+TOTAL                    76.59

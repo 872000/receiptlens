@@ -1,0 +1,16 @@
+PIZZA PIZZA
+789 Queenston Rd, Hamilton ON
+(905) 555-0199
+
+2026-09-14 18:47
+
+MED PEPPERONI PIZZA      14.99
+GARLIC BREAD              4.49
+2L PEPSI                  3.29
+
+SUBTOTAL                 22.77
+HST 13%                   2.96
+TOTAL                    25.73
+
+CREDIT                   25.73
+Enjoy your pizza!

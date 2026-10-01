@@ -1,0 +1,13 @@
+UBER
+Trip Receipt
+
+Date: 2026-09-08
+
+TRIP FARE                18.45
+BOOKING FEE               2.50
+
+SUBTOTAL                 20.95
+HST 13%                   2.72
+TOTAL                    23.67
+
+Thanks for riding with Uber!

@@ -1,0 +1,43 @@
+# ReceiptLens category rules.
+#
+# Format:
+#   <category-name>:
+#     keywords: [word, multi word, ...]   # inline list, matched case-insensitively
+#     color: "#rrggbb"                    # used in charts
+#
+# Scoring: an item scores the summed length of the keywords it matches, so
+# longer, more specific keywords beat short generic ones
+# ("garlic bread" beats "bread"). The highest score wins; ties go to the
+# category listed first. Items matching nothing become "uncategorized"
+# and show up in the review queue (`receiptlens categories --review`).
+#
+# Full-line comments and blank lines are ignored. Inline comments are not
+# supported (a "#" inside quotes is part of the value).
+
+groceries:
+  keywords: [milk, bread, egg, banana, apple, cheese, chicken, beef, pork, pasta, rice, cereal, yogurt, butter, lettuce, tomato, orange, juice, flour, sugar, onion, potato, carrot, soup, cracker, chip, cookie, chocolate, honey, jam, salmon, tuna, ham, turkey, bacon, sausage, produce, dairy, grocery]
+  color: "#43a047"
+
+dining:
+  keywords: [pizza, burger, sushi, taco, sandwich, bagel, donut, doughnut, croissant, muffin, fries, garlic bread, pepsi, coke, cola, soda, pop, drink, restaurant, dinner, lunch, breakfast]
+  color: "#fb8c00"
+
+coffee:
+  keywords: [coffee, espresso, latte, cappuccino, mocha, tea, timbit]
+  color: "#8d6e63"
+
+transport:
+  keywords: [uber, lyft, taxi, trip, fare, booking, gas, fuel, diesel, parking, toll, transit, bus, train, car wash, oil change]
+  color: "#1e88e5"
+
+shopping:
+  keywords: [bulb, light, shirt, pants, shoe, jacket, toy, book, tv, laptop, phone, charger, cable, tool, hammer, drill, paint, furniture, chair, decor]
+  color: "#5e35b1"
+
+health:
+  keywords: [vitamin, ibuprofen, advil, tylenol, bandage, pharmacy, prescription, toothpaste, shampoo, soap, lotion, sunscreen, drug]
+  color: "#00acc1"
+
+entertainment:
+  keywords: [ticket, movie, cinema, popcorn, concert, game, theatre, theater, streaming]
+  color: "#d81b60"

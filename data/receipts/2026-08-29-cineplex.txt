@@ -1,0 +1,13 @@
+CINEPLEX ODEON
+Jackson Square, Hamilton ON
+
+08/29/2026 20:10
+
+ADULT EVENING TICKET     15.99
+ADULT EVENING TICKET     15.99
+LARGE POPCORN             8.49
+2 MED DRINKS              9.98
+
+SUBTOTAL                 50.45
+HST 13%                   6.56
+TOTAL                    57.01

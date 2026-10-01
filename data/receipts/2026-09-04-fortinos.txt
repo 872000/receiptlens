@@ -1,0 +1,21 @@
+        *** FORTINOS ***
+   1234 Main St W, Hamilton ON
+        (905) 555-0142
+
+09/04/2026  14:32
+
+MILK 2% 4L                6.29
+BREAD WHOLE WHEAT         3.49
+EGGS LARGE 12PK           4.19
+BANANAS 1.02KG @ 1.99     2.03
+CHEDDAR CHEESE 400G       5.99
+CHICKEN BREAST 1.5KG     12.75
+PASTA PENNE 900G          1.79
+
+SUBTOTAL                 36.53
+HST 13%                   4.75
+TOTAL                    41.28
+
+CASH                     50.00
+CHANGE                    8.72
+   Thank you for shopping!
