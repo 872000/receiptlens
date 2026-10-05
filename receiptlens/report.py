@@ -22,6 +22,18 @@ def _color_for(category: str, rules: list[categorizer.CategoryRule]) -> str:
     return categorizer.DEFAULT_COLOR
 
 
+def _tax_inclusive_factor(receipt: dict, subtotal: float) -> float:
+    """Pro-rating factor so category totals add up to what was actually paid.
+
+    Falls back to 1.0 when the receipt has no printed total or no subtotal,
+    so category totals gracefully degrade to plain item prices.
+    """
+    total = receipt["total"]
+    if not subtotal or not total:
+        return 1.0
+    return total / subtotal
+
+
 def monthly_data(
     conn, year: int, month: int, rules: list[categorizer.CategoryRule]
 ) -> dict:
@@ -37,7 +49,7 @@ def monthly_data(
     for receipt in receipts:
         items = store.get_items(conn, receipt["id"])
         subtotal = receipt["subtotal"] or sum(i["price"] for i in items)
-        factor = (receipt["total"] / subtotal) if subtotal else 1.0
+        factor = _tax_inclusive_factor(receipt, subtotal)
         for item in items:
             bucket = categories.setdefault(
                 item["category"], {"total": 0.0, "count": 0}

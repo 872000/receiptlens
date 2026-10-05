@@ -67,3 +67,31 @@ def test_save_report_writes_md_and_png(sept_db, tmp_path):
     assert "September 2026" in md
     assert "groceries" in md
     assert png_path.is_file()
+
+
+def test_monthly_data_handles_receipt_without_total(tmp_path, rules):
+    """A receipt with items but no printed total must not crash the report;
+    category totals gracefully fall back to plain item prices."""
+    from datetime import date
+
+    from receiptlens.parser import ParsedReceipt, ReceiptItem
+
+    conn = store.connect(tmp_path / "nototal.db")
+    parsed = ParsedReceipt(
+        merchant="Corner Deli",
+        date=date(2026, 10, 2),
+        items=[
+            ReceiptItem(name="Turkey sandwich", price=8.50),
+            ReceiptItem(name="Coffee", price=2.75),
+        ],
+        subtotal=11.25,
+        tax=None,
+        total=None,
+        raw_text="corner deli receipt without printed total",
+    )
+    store.ingest_receipt(conn, parsed, rules)
+    data = report.monthly_data(conn, 2026, 10, rules)
+    assert data["n_receipts"] == 1
+    assert data["grand_total"] == pytest.approx(11.25)
+    assert sum(r["total"] for r in data["categories"]) == pytest.approx(11.25)
+    conn.close()
