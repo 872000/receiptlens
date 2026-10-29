@@ -171,7 +171,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = ap.add_subparsers(dest="command", required=True)
 
     p_ingest = sub.add_parser("ingest", help="OCR and ingest receipt files or folders")
-    p_ingest.add_argument("paths", nargs="+", help="receipt file(s) or directorie(s)")
+    p_ingest.add_argument("paths", nargs="+", help="receipt file(s) or directory(ies)")
     p_ingest.set_defaults(func=cmd_ingest)
 
     p_report = sub.add_parser("report", help="monthly spending report + chart")
