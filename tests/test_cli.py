@@ -60,3 +60,11 @@ def test_report_month_flag_validation(workdir):
 def test_ingest_missing_path(workdir, capsys):
     assert cli.main(["--db", workdir["db"], "ingest", "/does/not/exist"]) == 1
     assert "Nothing to ingest" in capsys.readouterr().out
+
+
+def test_parse_month_valid_and_invalid():
+    assert cli.parse_month("2026-09") == (2026, 9)
+    assert cli.parse_month("2026-1") == (2026, 1)
+    for bad in ("2026-13", "2026-00", "2026", "september-2026"):
+        with pytest.raises(Exception):
+            cli.parse_month(bad)
