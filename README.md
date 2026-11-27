@@ -46,7 +46,7 @@ The chart above isn't a mockup — it's the actual PNG produced by running the d
 Copy-paste — this works end to end on the bundled demo data:
 
 ```bash
-git clone https://github.com/PARTHPATEL5577/receiptlens.git
+git clone https://github.com/872000/receiptlens.git
 cd receiptlens
 python3 -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
